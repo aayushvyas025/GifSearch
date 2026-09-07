@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
+import GifSearch from "../GifSearch/GifSearch";
+import Gif from "../Gif/Gif";
 
 function Main() {
   return (
-    <div>Main</div>
-  )
+    <div>
+      <GifSearch />
+      <Gif />
+    </div>
+  );
 }
 
-export default Main
-
+export default Main;
