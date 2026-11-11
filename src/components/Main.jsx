@@ -4,22 +4,16 @@ import GifTag from "./GifTag";
 import useGif from "@/hooks/useGif";
 
 function Main() {
-  const { gifData, fetchRandomGif, gifTag, fetchTagGif, setGifTag, tagGifData } = useGif();
+  const { gifData, fetchGif } = useGif();
 
   useEffect(() => {
-    fetchRandomGif();
-    fetchTagGif();
+    fetchGif();
   }, []);
 
   return (
     <div>
-      <RandomGif gifData={gifData} fetchGif={fetchRandomGif} />
-      <GifTag
-        gifData={tagGifData}
-        gifTag={gifTag}
-        fetchGif={fetchTagGif}
-        setGifTag={setGifTag}
-      />
+      <RandomGif gifData={gifData} fetchGif={fetchGif} />
+      <GifTag gifData={gifData}  fetchGif={fetchGif} />
     </div>
   );
 }
