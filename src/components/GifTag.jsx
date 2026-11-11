@@ -21,7 +21,7 @@ function GifTag({gifData, gifTag, fetchGif, setGifTag}) {
       <button onClick={async () => handleChangeGifByTag()} type="button">
         Find More
       </button>
-      <Gif title={gifData?.data?.title} gif={gifData?.data?.images?.downsized_large?.url} />
+      <Gif title={gifData?.title} gif={gifData?.image} />
     </div>
   );
 }

@@ -10,8 +10,8 @@ function RandomGif({ gifData, fetchGif }) {
     <div className="random-gif"> 
     <h1>Random Gif</h1>
       <Gif
-        title={gifData?.data?.title}
-        gif={gifData?.data?.images?.downsized_large?.url}
+        title={gifData?.title}
+        gif={gifData?.image}
       />
       <button onClick={async () => await handleChangeGif()} type="button">
         Find More

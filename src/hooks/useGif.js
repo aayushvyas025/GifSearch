@@ -21,7 +21,12 @@ function useGif() {
       }
 
       const data = await response.json();
-      setGifData(data);
+
+      const randomGif = {
+        image: data?.data?.images?.downsized_large?.url,
+        title: gifData?.data?.title,
+      };
+      setGifData(randomGif);
       setIsLoading(false);
     } catch (error) {
       console.error(`Error, while fetching random GIFs: ${error.message}`);
@@ -44,7 +49,12 @@ function useGif() {
       }
 
       const data = await response.json();
-      setTagGifData(data);
+      const gifByTag = {
+        image: data?.data?.images?.downsized_large?.url,
+        title: gifData?.data?.title,
+      };
+
+      setTagGifData(gifByTag);
       setIsLoading(false);
     } catch (error) {
       console.error(`Error, while fetching random GIFs: ${error.message}`);
