@@ -2,7 +2,10 @@ import React from "react";
 
 function AppLogo() {
   return (
-      <img src="./GifSearch.png" alt="app-logo" className="app-logo" /> 
+    <div className="app-logo">
+      <img src="./GifSearch.png" alt="app-logo"  /> 
+       <span>Gif Generator</span>
+    </div>
   );
 }
 

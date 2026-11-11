@@ -5,7 +5,7 @@ import GifTag from "./GifTag";
 function Main() {
   return (
     <div>
-      <RandomGif />
+      <RandomGif  />
       <GifTag />
     </div>
   );

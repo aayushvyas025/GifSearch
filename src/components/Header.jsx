@@ -4,7 +4,7 @@ import AppLogo from "./AppLogo";
 function Header() {
   return (
     <div className="header">
-      <AppLogo />
+      <AppLogo /> 
     </div>
   );
 }
