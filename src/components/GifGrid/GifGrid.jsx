@@ -1,9 +1,12 @@
-import React from 'react'
+import { fetchRandomGif } from "@/api/apis";
+import React, { useEffect } from "react";
 
-function GifGrid({gifData}) {
-  return (
-    <div>GifGrid</div>
-  )
+function GifGrid() {
+
+  useEffect(() => {
+    fetchRandomGif(); 
+  }, []);
+  return <div>GifGrid</div>;
 }
 
-export default GifGrid
+export default GifGrid;
