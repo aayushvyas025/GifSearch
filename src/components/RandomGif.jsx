@@ -17,9 +17,8 @@ function RandomGif() {
 
   return (
     <div className="random-gif">
-        <h1>Random GIF</h1>
       <Gif title={gifData?.title} gif={gifData?.images?.downsized_large?.url} />
-      <button onClick={() => handleFetchRandomGIF()} type="button">
+      <button onClick={async () => await handleFetchRandomGIF()} type="button">
         Find More
       </button>
     </div>

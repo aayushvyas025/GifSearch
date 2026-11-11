@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Gif from "./Gif";
 
 function GifTag() {
-  const [tagGif, setTagGif] = useState('');
+  const [tagGif, setTagGif] = useState("");
   const [gifData, setGifData] = useState(null);
 
   async function handleFetchRandomGIF() {
@@ -21,12 +21,12 @@ function GifTag() {
       <h1>Random tag {tagGif} GIF</h1>
       <Gif title={gifData?.title} gif={gifData?.images?.downsized_large?.url} />
       <input
-      type="text"
+        type="text"
         value={tagGif}
-        onChange={(event) => setTagGif(event.target.value)}
+        onChange={(e) => setTagGif(e.target.value)}
       />
-      <button onClick={() => fetchRandomGif()} type="button">
-        Find More GIF
+      <button onClick={async () => await handleFetchRandomGIF()} type="button">
+        Find More
       </button>
     </div>
   );
