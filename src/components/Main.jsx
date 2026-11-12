@@ -5,7 +5,7 @@ import useGif from "@/hooks/useGif";
 
 function Main() {
   return (
-    <div>
+    <div className="main">
       <RandomGif />
       <GifTag  />
     </div>

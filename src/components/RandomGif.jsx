@@ -11,7 +11,7 @@ function RandomGif() {
 
   return (
     <div className="random-gif">
-      <h1>Random Gif</h1>
+      <h2>Random Gif</h2>
       <Gif title={gifData?.title} gif={gifData?.image} />
       <button onClick={() => fetchGif()} type="button" disabled={isLoading}>
         Find More
