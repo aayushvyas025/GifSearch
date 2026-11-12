@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Gif from "./Gif";
+import useGif from "@/hooks/useGif";
 
-function GifTag({ gifData, fetchGif }) {
+function GifTag() {
+  const { gifData, isLoading, fetchGif } = useGif();
   const [gifTag, setGifTag] = useState("dogs");
-  async function handleChangeGifByTag(tag) {
-    await fetchGif(tag);
-  }
 
   return (
     <div className="tag-gif">
@@ -15,7 +14,11 @@ function GifTag({ gifData, fetchGif }) {
         value={gifTag}
         onChange={(e) => setGifTag(e.target.value)}
       />
-      <button onClick={async () => handleChangeGifByTag(gifTag)} type="button">
+      <button
+        onClick={async () => fetchGif(gifTag)}
+        type="button"
+        disabled={isLoading}
+      >
         Find More
       </button>
       <Gif title={gifData?.title} gif={gifData?.image} />
