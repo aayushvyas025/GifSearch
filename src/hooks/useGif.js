@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
@@ -37,9 +37,6 @@ function useGif() {
     }
   }
 
-  useEffect(() => {
-    fetchGif();
-  }, []);
 
   return {
     gifData,

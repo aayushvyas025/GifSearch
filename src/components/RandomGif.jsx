@@ -1,8 +1,13 @@
 import useGif from "@/hooks/useGif";
 import Gif from "./Gif";
+import { useEffect } from "react";
 
 function RandomGif() {
   const { gifData, isLoading, fetchGif } = useGif();
+
+ useEffect(() => {
+    fetchGif();
+  }, []);
 
   return (
     <div className="random-gif">

@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Gif from "./Gif";
 import useGif from "@/hooks/useGif";
 
 function GifTag() {
   const { gifData, isLoading, fetchGif } = useGif();
   const [gifTag, setGifTag] = useState("dogs");
+
+   useEffect(() => {
+    fetchGif(gifTag);
+  }, [gifTag]);
+
 
   return (
     <div className="tag-gif">
