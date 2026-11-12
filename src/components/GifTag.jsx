@@ -8,7 +8,7 @@ function GifTag() {
   const [gifTag, setGifTag] = useState("dogs");
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => fetchGif(gifTag), 500);
+    const timeoutId = setTimeout(() => fetchGif(gifTag.toLowerCase()), 500);
 
     return () => clearTimeout(timeoutId);
   }, [gifTag]);
@@ -19,7 +19,7 @@ function GifTag() {
       <GifSearch
         value={gifTag}
         onChange={(e) => setGifTag(e.target.value)}
-        onClick={() => fetchGif()}
+        onClick={() => fetchGif(gifTag.toLowerCase())}
         disabled={isLoading}
       />
       <Gif title={gifData?.title} gif={gifData?.image} />
